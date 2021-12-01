@@ -10,10 +10,10 @@ import Navbar from "./components/Navbar"
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
     <Navbar/>
       <Switch>
-        <Route exact path="/" component={ToDoContainer} />
+        <Route exact path="/"  component={ToDoContainer} />
         <Route path="/about" component={About} />
         <Route path="*" component={NotMatch} />
       </Switch>
