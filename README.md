@@ -2,12 +2,20 @@
 
 # React.js To Do List
 
-> This project is in process 
+> This is a React To-Do App that allows you to save and complete your daily tasks
+
+![screenshot](./src/README/ToDoApp.gif)
+
 
 ## Built With
 
 - React js and JSX
+- React-icons
 - Linters: Stylelint and Eslint
+
+## Live link
+
+- https://rafaelechart.github.io/React-ToDoList/
 
 
 ## Getting Started

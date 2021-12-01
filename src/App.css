@@ -80,8 +80,7 @@ body {
   font-weight: 600;
   margin-bottom: 2rem;
   line-height: 1em;
-  color: #ececec;
-  text-transform: lowercase;
+  color: #595959;
   text-align: center;
 }
 
@@ -139,7 +138,7 @@ body {
   list-style: none;
   position: fixed;
   top: 0;
-  background: darkcyan;
+  background: #9a9a9a;
   left: 0;
   bottom: 0;
   height: 100vh;
@@ -147,6 +146,7 @@ body {
   overflow: hidden;
   max-width: 290px;
   z-index: 9;
+  transition-duration: 0.5s;
 }
 
 .menuNav.showMenu {
@@ -157,7 +157,7 @@ a {
   display: block;
   padding: 10px 40px;
   text-decoration: none;
-  color: #3fffd2;
+  color: white;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -200,4 +200,48 @@ a {
 
 .main__content p {
   line-height: 25px;
+}
+
+.rainbow{
+  animation: rainbow 5s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainbow{
+  100%,0%{
+    color: rgb(255,0,0);
+  }
+  8%{
+    color: rgb(255,127,0);
+  }
+  16%{
+    color: rgb(255,255,0);
+  }
+  25%{
+    color: rgb(127,255,0);
+  }
+  33%{
+    color: rgb(0,255,0);
+  }
+  41%{
+    color: rgb(0,255,127);
+  }
+  50%{
+    color: rgb(0,255,255);
+  }
+  58%{
+    color: rgb(0,127,255);
+  }
+  66%{
+    color: rgb(0,0,255);
+  }
+  75%{
+    color: rgb(127,0,255);
+  }
+  83%{
+    color: rgb(255,0,255);
+  }
+  91%{
+    color: rgb(255,0,127);
+  }
 }
