@@ -1,5 +1,5 @@
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
 import { MdClose } from 'react-icons/md';
 import { FiMenu } from 'react-icons/fi';
 
