@@ -57,6 +57,12 @@ body {
   margin-right: 10px;
 }
 
+.input-submit svg {
+  color: #666666;
+  font-size: 20px;
+  margin-top: 2px;
+}
+
 .input-text,
 .input-submit {
   height: 45px;
@@ -101,4 +107,10 @@ body {
   height: 50px;
   width: 50px;
   margin: -10px 0 0 10px;
+}
+
+.textInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dfdfdf;
 }

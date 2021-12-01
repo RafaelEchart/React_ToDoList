@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { AiOutlinePlus } from "react-icons/ai"
+
 const InputToDo = (props) => {
 
 const [ inputValue, setInputValue ] = useState("")
@@ -22,7 +24,7 @@ const handleSubmit = (e) => {
   return (
     <form onSubmit={handleSubmit} className="form-container">
      <input type="text" className="input-text" placeholder="Add Todo..." name="inputValue" value={inputValue} onChange={newInputValueHandler} />
-        <button className="input-submit">Submit</button>
+        <button className="input-submit"><AiOutlinePlus/></button>
     </form>
   );
 };

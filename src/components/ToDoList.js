@@ -8,7 +8,7 @@ const ToDoList = (props) =>{
     return (
     <React.Fragment>
        {props.data.map((toDo)=>(
-        <ToDoItem key={toDo.id} toDo={toDo} handleChangeProps={props.handleChangeProps} deleteTodoProps={props.deleteTodoProps} />
+        <ToDoItem key={toDo.id} toDo={toDo} handleChangeProps={props.handleChangeProps} deleteTodoProps={props.deleteTodoProps} setUpdateProps={props.setUpdateProps} />
        ))}
     </React.Fragment>
     )
