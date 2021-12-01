@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
-import Header from "./Header";
-import InputToDo from "./InputToDo";
-import ToDoList from "./ToDoList";
-
+import React, { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import Header from './Header';
+import InputToDo from './InputToDo';
+import ToDoList from './ToDoList';
 
 const ToDoContainer = () => {
   const [todoList, setTodoList] = useState([]);
 
   useEffect(() => {
-    const localStorageMemory = JSON.parse(localStorage.getItem("dataTasks"));
+    const localStorageMemory = JSON.parse(localStorage.getItem('dataTasks'));
 
     if (localStorageMemory && localStorageMemory.length) {
       setTodoList(localStorageMemory);
@@ -20,7 +19,7 @@ const ToDoContainer = () => {
 
   const handleChange = (id) => {
     setTodoList((prevState) => {
-      let newState = prevState.map((toDoItem) => {
+      const newState = prevState.map((toDoItem) => {
         if (toDoItem.id === id) {
           return {
             ...toDoItem,
@@ -30,7 +29,7 @@ const ToDoContainer = () => {
         return toDoItem;
       });
 
-      localStorage.setItem("dataTasks", JSON.stringify(newState));
+      localStorage.setItem('dataTasks', JSON.stringify(newState));
       return newState;
     });
   };
@@ -38,31 +37,31 @@ const ToDoContainer = () => {
   const deleteToDo = (id) => {
     const newTaskList = todoList.filter((toDoItem) => toDoItem.id !== id);
     setTodoList(newTaskList);
-    localStorage.setItem("dataTasks", JSON.stringify(newTaskList));
+    localStorage.setItem('dataTasks', JSON.stringify(newTaskList));
   };
 
   const addTodoItem = (title) => {
     const newToDo = {
       id: uuidv4(),
-      title: title,
+      title,
       completed: false,
     };
     setTodoList((prevState) => [...prevState, newToDo]);
 
-    const localStorageMemory = JSON.parse(localStorage.getItem("dataTasks"));
+    const localStorageMemory = JSON.parse(localStorage.getItem('dataTasks'));
 
     if (localStorageMemory && localStorageMemory.length) {
       localStorageMemory.push(newToDo);
-      localStorage.setItem("dataTasks", JSON.stringify(localStorageMemory));
+      localStorage.setItem('dataTasks', JSON.stringify(localStorageMemory));
     } else {
-      let tempNewMemory = [newToDo];
-      localStorage.setItem("dataTasks", JSON.stringify(tempNewMemory));
+      const tempNewMemory = [newToDo];
+      localStorage.setItem('dataTasks', JSON.stringify(tempNewMemory));
     }
   };
 
   const setUpdate = (updatedTitle, id) => {
     setTodoList((prevState) => {
-      let newState = prevState.map((toDoItem) => {
+      const newState = prevState.map((toDoItem) => {
         if (toDoItem.id === id) {
           return {
             ...toDoItem,
@@ -72,13 +71,13 @@ const ToDoContainer = () => {
         return toDoItem;
       });
 
-      localStorage.setItem("dataTasks", JSON.stringify(newState));
+      localStorage.setItem('dataTasks', JSON.stringify(newState));
       return newState;
     });
   };
 
   return (
-    
+
         <div className="container">
           <div className="inner">
             <Header />
@@ -91,7 +90,7 @@ const ToDoContainer = () => {
             />
           </div>
         </div>
-     
+
   );
 };
 

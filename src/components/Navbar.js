@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import { MdClose } from "react-icons/md";
-import { FiMenu } from "react-icons/fi";
+import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import { MdClose } from 'react-icons/md';
+import { FiMenu } from 'react-icons/fi';
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -9,13 +9,13 @@ const Navbar = () => {
   const links = [
     {
       id: 1,
-      path: "/",
-      text: "Home",
+      path: '/',
+      text: 'Home',
     },
     {
       id: 2,
-      path: "/about",
-      text: "About",
+      path: '/about',
+      text: 'About',
     },
   ];
 
@@ -31,15 +31,14 @@ const Navbar = () => {
     <nav className="navBar">
       <button onClick={handleToggle}>
         {navbarOpen ? (
-          <MdClose style={{ color: "#fff", width: "30px", height: "30px" }} />
+          <MdClose style={{ color: '#fff', width: '30px', height: '30px' }} />
         ) : (
-          <FiMenu style={{ color: "#7b7b7b", width: "30px", height: "30px" }} />
+          <FiMenu style={{ color: '#7b7b7b', width: '30px', height: '30px' }} />
         )}
       </button>
 
-      <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
-        {links.map((link) => {
-          return (
+      <ul className={`menuNav ${navbarOpen ? ' showMenu' : ''}`}>
+        {links.map((link) => (
             <li key={link.id}>
               <NavLink
                 activeclassname="active-link"
@@ -49,8 +48,7 @@ const Navbar = () => {
                 {link.text}
               </NavLink>
             </li>
-          );
-        })}
+        ))}
       </ul>
     </nav>
   );

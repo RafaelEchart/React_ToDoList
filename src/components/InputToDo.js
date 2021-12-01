@@ -1,26 +1,24 @@
-import { useState } from "react";
-import { AiOutlinePlus } from "react-icons/ai"
+import { useState } from 'react';
+import { AiOutlinePlus } from 'react-icons/ai';
 
 const InputToDo = (props) => {
+  const [inputValue, setInputValue] = useState('');
 
-const [ inputValue, setInputValue ] = useState("")
+  const { addTodoProps } = props;
 
-const {addTodoProps} = props
+  const newInputValueHandler = (e) => {
+    setInputValue(e.target.value);
+  };
 
-const newInputValueHandler = (e) => {
-    setInputValue(e.target.value)
-}
-
-const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if(inputValue.trim()){
-        addTodoProps(inputValue)
-        setInputValue('')
+    if (inputValue.trim()) {
+      addTodoProps(inputValue);
+      setInputValue('');
     } else {
-        alert("Please do not leave an empty task!")
+      alert('Please do not leave an empty task!');
     }
-    
-}
+  };
   return (
     <form onSubmit={handleSubmit} className="form-container">
      <input type="text" className="input-text" placeholder="Add Todo..." name="inputValue" value={inputValue} onChange={newInputValueHandler} />
