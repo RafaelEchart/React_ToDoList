@@ -32,7 +32,7 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
 - git clone https://github.com/RafaelEchart/React_ToDoList.git
-- cd React-ToDoList
+- cd React_ToDoList
 
 ### Install
 
